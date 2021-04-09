@@ -1,0 +1,10 @@
+item.wrench.name=Гаечный ключ
+item.rock.name=Большой камень
+item.catapult.name=Катапульта
+item.fireProjectile.name=Горящий снаряд
+entity.catapult.name=Катапульта
+entity.catapult.power=Сила
+entity.catapult.reload=Загрузить снаряд
+entity.catapult.reloading=Загрузка снаряда...
+entity.catapult.loaded=Запустить снаряд
+entity.catapult.shooting=Запуск снаряда...

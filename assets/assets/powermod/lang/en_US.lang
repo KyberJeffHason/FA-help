@@ -1,0 +1,10 @@
+item.wrench.name=Wrench
+item.rock.name=Rock
+item.catapult.name=Catapult
+item.fireProjectile.name=Flaming Projectile
+entity.catapult.name=Catapult
+entity.catapult.power=Power
+entity.catapult.reload=Reload
+entity.catapult.reloading=Reloading...
+entity.catapult.loaded=Launch
+entity.catapult.shooting=Shooting...
