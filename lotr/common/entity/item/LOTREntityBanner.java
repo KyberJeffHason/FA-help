@@ -87,7 +87,7 @@ public class LOTREntityBanner extends Entity {
         int j = MathHelper.floor_double(this.boundingBox.minY);
         int k = MathHelper.floor_double(this.posZ);
         int range = this.getProtectionRange();
-        return AxisAlignedBB.getBoundingBox(i, j, k, i + 1, j + 1, k + 1).expand(range, 200, range);
+        return AxisAlignedBB.getBoundingBox(i, j, k, i + 1, j + 1, k + 1).expand(range, 30000, range);
     }
 
     public boolean isPlayerSpecificProtection() {

@@ -20,13 +20,13 @@ import net.minecraft.util.*;
 import net.minecraft.world.World;
 
 public class LOTRBannerProtection {
-    public static final int MAX_RANGE = 1000;
+    public static final int MAX_RANGE = 100000;
     private static Map<Pair, Integer> protectionBlocks = new HashMap<Pair, Integer>();
     private static Map<UUID, Integer> lastWarningTimes;
 
     public static int getProtectionRange(Block block, int meta) {
         Integer i = protectionBlocks.get(Pair.of(block, meta));
-        if(i == null) {
+        if(i == null) {	
             return 0;
         }
         return i;
@@ -48,8 +48,8 @@ public class LOTRBannerProtection {
             return false;
         }
         String protectorName = null;
-        AxisAlignedBB originCube = AxisAlignedBB.getBoundingBox(i, j, k, i + 1, j + 1, k + 1).expand(searchExtra, searchExtra, searchExtra);
-        AxisAlignedBB searchCube = originCube.expand(64.0, 64.0, 64.0);
+        AxisAlignedBB originCube = AxisAlignedBB.getBoundingBox(i, j, k, i + 1, j + 1, k + 1).expand(searchExtra, 30000, searchExtra);
+        AxisAlignedBB searchCube = originCube.expand(64.0, 30000.0, 64.0);
         List banners = world.getEntitiesWithinAABB(LOTREntityBanner.class, searchCube);
         if(!banners.isEmpty()) {
             for(Object banner2 : banners) {
