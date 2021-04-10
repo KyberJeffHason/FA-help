@@ -207,16 +207,16 @@ public class LOTRContainerAnvil extends Container {
                         int costPerLevel = 0;
                         int enchWeight = combinerEnch.getWeight();
                         if(enchWeight == 1) {
-                            costPerLevel = 8;
+                            costPerLevel = 8; //8
                         }
                         else if(enchWeight == 2) {
-                            costPerLevel = 4;
+                            costPerLevel = 4; //4
                         }
                         else if(enchWeight == 5) {
-                            costPerLevel = 2;
+                            costPerLevel = 2; //2
                         }
                         else if(enchWeight == 10) {
-                            costPerLevel = 1;
+                            costPerLevel = 1; //1
                         }
                         combineCost += costPerLevel * levelsAdded;
                     }
@@ -272,16 +272,16 @@ public class LOTRContainerAnvil extends Container {
                 int costPerLevel = 0;
                 int enchWeight = ench.getWeight();
                 if(enchWeight == 1) {
-                    costPerLevel = 8;
+                    costPerLevel = 8; //8
                 }
                 else if(enchWeight == 2) {
-                    costPerLevel = 4;
+                    costPerLevel = 4; //4
                 }
                 else if(enchWeight == 5) {
-                    costPerLevel = 2;
+                    costPerLevel = 2; //2
                 }
                 else if(enchWeight == 10) {
-                    costPerLevel = 1;
+                    costPerLevel = 1; // 1
                 }
                 baseAnvilCost += numEnchants + enchLevel * costPerLevel;
             }
@@ -332,6 +332,7 @@ public class LOTRContainerAnvil extends Container {
                 this.materialCost = 0;
             }
             this.materialCost += renameCost;
+            int materialCostt = this.materialCost;
             if(inputCopy != null) {
                 int nextAnvilCost = LOTREnchantmentHelper.getAnvilCost(inputItem);
                 if(combinerItem != null) {
@@ -405,6 +406,11 @@ public class LOTRContainerAnvil extends Container {
                 this.materialCost = 0;
             }
             this.detectAndSendChanges();
+            if(materialCostt + combineCost + repairCost >= 64 && !this.isTrader) {
+            	
+            	this.materialCost = 64;
+            	
+            }
         }
     }
 
