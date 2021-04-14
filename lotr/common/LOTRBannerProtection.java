@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
 
 public class LOTRBannerProtection {
-	public static final int MAX_RANGE = 64;
+	public static final int MAX_RANGE = 100000;
 	private static Map<Pair, Integer> protectionBlocks = new HashMap<>();
 	private static Map<UUID, Integer> lastWarningTimes;
 
@@ -50,8 +50,8 @@ public class LOTRBannerProtection {
 			return false;
 		}
 		String protectorName = null;
-		AxisAlignedBB originCube = AxisAlignedBB.getBoundingBox(i, j, k, i + 1, j + 1, k + 1).expand(searchExtra, searchExtra, searchExtra);
-		AxisAlignedBB searchCube = originCube.expand(64.0, 64.0, 64.0);
+		AxisAlignedBB originCube = AxisAlignedBB.getBoundingBox(i, j, k, i + 1, j + 1, k + 1).expand(searchExtra, 30000.0, searchExtra);
+		AxisAlignedBB searchCube = originCube.expand(64.0, 30000.0, 64.0);
 		List banners = world.getEntitiesWithinAABB(LOTREntityBanner.class, searchCube);
 		if (!banners.isEmpty()) {
 			for (Object banner2 : banners) {
