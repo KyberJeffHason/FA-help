@@ -6,10 +6,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.util.ResourceLocation;
 
-public class LOTRGuiBannerButton extends GuiButton {
+public class LOTRGuiButtonBannerWhitelistSlots extends GuiButton {
 	private static ResourceLocation guiTexture = new ResourceLocation("lotr:gui/banner_edit.png");
 
-	public LOTRGuiBannerButton(int i, int j, int k) {
+	public LOTRGuiButtonBannerWhitelistSlots(int i, int j, int k) {
 		super(i, j, k, 7, 7, "");
 	}
 
