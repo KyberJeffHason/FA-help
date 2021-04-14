@@ -20,6 +20,7 @@ import lotr.common.world.map.LOTRAbstractWaypoint;
 import lotr.common.world.map.LOTRConquestZone;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiChest;
 import net.minecraft.client.gui.inventory.GuiDispenser;
 import net.minecraft.entity.Entity;
@@ -789,4 +790,15 @@ public class LOTRCommonProxy implements IGuiHandler {
     public int getGuldurilRenderID() {
         return 0;
     }
+
+	public void validateBannerUsername(LOTREntityBanner banner, int slot, String prevText, boolean valid) {
+		Minecraft mc = Minecraft.getMinecraft();
+		GuiScreen gui = mc.currentScreen;
+		if (gui instanceof LOTRGuiBanner) {
+			LOTRGuiBanner guiBanner = (LOTRGuiBanner) gui;
+			if (guiBanner.theBanner == banner) {
+				guiBanner.validateUsername(slot, prevText, valid);
+			}
+		}
+	}
 }

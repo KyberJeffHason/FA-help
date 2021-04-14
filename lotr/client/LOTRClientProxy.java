@@ -598,23 +598,23 @@ public class LOTRClientProxy extends LOTRCommonProxy {
     }
 
     @Override
-    public void displayBannerGui(LOTREntityBanner banner) {
-        Minecraft mc = Minecraft.getMinecraft();
-        LOTRGuiBanner gui = new LOTRGuiBanner(banner);
-        mc.displayGuiScreen(gui);
-    }
+	public void displayBannerGui(LOTREntityBanner banner) {
+		Minecraft mc = Minecraft.getMinecraft();
+		LOTRGuiBanner gui = new LOTRGuiBanner(banner);
+		mc.displayGuiScreen(gui);
+	}
 
-    @Override
-    public void invalidateBannerUsername(LOTREntityBanner banner, int slot, String prevText) {
-        Minecraft mc = Minecraft.getMinecraft();
-        GuiScreen gui = mc.currentScreen;
-        if(gui instanceof LOTRGuiBanner) {
-            LOTRGuiBanner guiBanner = (LOTRGuiBanner) gui;
-            if(guiBanner.theBanner == banner) {
-                guiBanner.setUsernameInvalid(slot, prevText);
-            }
-        }
-    }
+	@Override
+	public void validateBannerUsername(LOTREntityBanner banner, int slot, String prevText, boolean valid) {
+		Minecraft mc = Minecraft.getMinecraft();
+		GuiScreen gui = mc.currentScreen;
+		if (gui instanceof LOTRGuiBanner) {
+			LOTRGuiBanner guiBanner = (LOTRGuiBanner) gui;
+			if (guiBanner.theBanner == banner) {
+				guiBanner.validateUsername(slot, prevText, valid);
+			}
+		}
+	}
 
     @Override
     public void clientReceiveSpeech(LOTREntityNPC npc, String speech) {
