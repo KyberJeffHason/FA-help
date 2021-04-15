@@ -44,7 +44,6 @@ public class LOTRPacketHandler {
         networkWrapper.registerMessage(LOTRPacketCWPProtectionMessage.Handler.class, LOTRPacketCWPProtectionMessage.class, id++, Side.CLIENT);
         networkWrapper.registerMessage(LOTRPacketNPCFX.Handler.class, LOTRPacketNPCFX.class, id++, Side.CLIENT);
         networkWrapper.registerMessage(LOTRPacketBannerData.Handler.class, LOTRPacketBannerData.class, id++, Side.CLIENT);
-        networkWrapper.registerMessage(LOTRPacketBannerInvalidName.Handler.class, LOTRPacketBannerInvalidName.class, id++, Side.CLIENT);
         networkWrapper.registerMessage(LOTRPacketFamilyInfo.Handler.class, LOTRPacketFamilyInfo.class, id++, Side.CLIENT);
         networkWrapper.registerMessage(LOTRPacketEntityUUID.Handler.class, LOTRPacketEntityUUID.class, id++, Side.CLIENT);
         networkWrapper.registerMessage(LOTRPacketNPCSpeech.Handler.class, LOTRPacketNPCSpeech.class, id++, Side.CLIENT);
